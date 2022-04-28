@@ -23,11 +23,13 @@ jobs:
         Name: tail
         BINDIR: bin
       run: go build -v ./main.go
-    
+    # 发布流程
     - name: Upload Release
       uses: softprops/action-gh-release@v1
       with:
         files: bin/*
+        # 标签名 必填项
+        tag_name: tail
 
 # 暂时注释掉test环节
 #     - name: Test
