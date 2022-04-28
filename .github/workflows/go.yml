@@ -19,7 +19,15 @@ jobs:
         go-version: 1.18
 
     - name: Build
+      env:
+        Name: tail
+        BINDIR: bin
       run: go build -v ./main.go
+    
+    - name: Upload Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: bin/*
 
 # 暂时注释掉test环节
 #     - name: Test
