@@ -31,8 +31,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: ./tail.exe
-        # 标签名 必填项
-        tag_name: tail
 
 # 暂时注释掉test环节
 #     - name: Test
