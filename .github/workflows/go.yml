@@ -19,8 +19,8 @@ jobs:
         go-version: 1.18
     - name: dir
       run: dir
-    - name: Checkout
-      uses: actions/checkout@v2
+    # - name: Checkout
+    #   uses: actions/checkout@v2
     - name: Build
       env:
         Name: tail
