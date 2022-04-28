@@ -21,5 +21,6 @@ jobs:
     - name: Build
       run: go build -v ./main.go
 
-    - name: Test
-      run: go test -v ./...
+# 暂时注释掉test环节
+#     - name: Test
+#       run: go test -v ./...
