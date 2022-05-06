@@ -32,8 +32,8 @@ jobs:
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        files: ./tail.exe
-        draft: false
+        files: tail.exe
+        draft: true
         prerelease: true
 # 暂时注释掉test环节
 #     - name: Test
