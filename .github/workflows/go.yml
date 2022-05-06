@@ -26,7 +26,7 @@ jobs:
         Name: tail
         BINDIR: bin
       run: go build -o tail.exe ./main.go
-    - name: dir
+    - name: dir2
       run: dir
     - name: Upload Release
       uses: softprops/action-gh-release@v1
