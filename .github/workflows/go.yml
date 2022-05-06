@@ -26,6 +26,8 @@ jobs:
         Name: tail
         BINDIR: bin
       run: go build -o tail.exe ./main.go
+    - name: dir
+      run: dir
     - name: Upload Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
