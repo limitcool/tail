@@ -9,8 +9,8 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
-    # runs-on: windows-latest
+    # runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
       env:
         Name: tail
         BINDIR: bin
-      run: go build -o tail ./main.go
+      run: go build -o tail.exe ./main.go
 
     - name: dir2
       run: dir
@@ -38,7 +38,7 @@ jobs:
       # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: tail
-        tag_name: tail
+        tag_name: tail.exe
 # 暂时注释掉test环节
 #     - name: Test
 #       run: go test -v ./...
