@@ -5,6 +5,7 @@
 ## 使用方法
 
 ```powershell
+$ go install github.com/limitcool/tail@latest
 $ tail -f <filename>
 ```
 
