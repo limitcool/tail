@@ -8,7 +8,10 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 	"time"
+
+	"github.com/fatih/color"
 )
 
 func main() {
@@ -23,6 +26,7 @@ func main() {
 	// 读取文件
 	go Read(*fileName)
 	select {}
+
 }
 
 // 持续写入文件
@@ -74,4 +78,17 @@ func Read(fileName string) {
 		LineNumber++
 		time.Sleep(time.Microsecond * 500)
 	}
+}
+
+func Magic(str string) string {
+	if strings.Contains(str, "INFO") {
+		return strings.Replace(str, "INFO", color.GreenString("INFO"), -1)
+	}
+	if strings.Contains(str, "WARN") {
+		return strings.Replace(str, "WARN", color.YellowString("WARN"), -1)
+	}
+	if strings.Contains(str, "ERROR") {
+		return strings.Replace(str, "ERROR", color.RedString("ERROR"), -1)
+	}
+	return str
 }
